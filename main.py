@@ -4,6 +4,11 @@ def sestej(a, b):
 def odstej(a, b):
     return a - b
 
+def deli(a, b):
+    if b == 0:
+        return "Napaka: Deljenje z nič ni dovoljeno!"
+    return a / b
+    
 # DODANO: Funkcija za množenje
 def pomnozi(a, b):
     return a * b
@@ -11,7 +16,8 @@ def pomnozi(a, b):
 print("Pozdrav! Mini kalkulator")
 print("1 = seštevanje")
 print("2 = odštevanje")
-print("3 = množenje") # DODANO
+print("3 = množenje")
+print("4 = deljenje") # DODANO
 
 izbira = input("Kaj želiš narediti? (1, 2 ali 3): ")
 
@@ -28,5 +34,9 @@ elif izbira == "3":
     x = float(input("Prvo število: "))
     y = float(input("Drugo število: "))
     print(f"Rezultat: {pomnozi(x, y)}")
+elif izbira == "4":
+    x = float(input("Prvo število: "))
+    y = float(input("Drugo število: "))
+    print(f"Rezultat: {deli(x, y)}")
 else:
     print("Neveljavna izbira!")
