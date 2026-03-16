@@ -10,11 +10,13 @@ def deli(a, b):
 def odstej(a, b):
     return a - b
 
-print("Pozdrav! Mini kalkulator")
-print("1 = seštevanje")
-print("2 = odštevanje")
+def pomnozi(a, b):
+    return a * b
 
-izbira = input("Kaj želiš narediti? (1 ali 2): ")
+def deli(a, b):
+    if b == 0:
+        return "Napaka: Deljenje z nič ni mogoče!"
+    return a / b
 
 if izbira == "1":
     x = float(input("Prvo število: "))
