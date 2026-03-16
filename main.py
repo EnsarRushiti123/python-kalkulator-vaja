@@ -9,39 +9,39 @@ def pomnozi(a, b):
 
 def deli(a, b):
     if b == 0:
-        return "Napaka: Deljenje z nič ni dovoljeno!"
+        return "Napaka: Deljenje z nič ni mogoče!"
     return a / b
 
-def prikazi_meni():
-    print("\n--- Mini Kalkulator ---")
-    print("1 = Seštevanje")
-    print("2 = Odštevanje")
-    print("3 = Množenje")
-    print("4 = Deljenje")
-    print("0 = Izhod")
-
+# DODANA WHILE ZANKA ZA NESKONČNO PONAVLJANJE
 while True:
-    prikazi_meni()
-    izbira = input("Izberi operacijo (0-4): ")
-
-    if izbira == "0":
-        print("Nasvidenje!")
-        break
+    print("\n--- Mini Kalkulator ---")
+    print("1 = seštevanje")
+    print("2 = odštevanje")
+    print("3 = množenje")
+    print("4 = deljenje")
+    print("0 = IZHOD") # Nova možnost
     
+    izbira = input("Izberi operacijo (0-4): ")
+    
+    # Preverjanje za izhod
+    if izbira == "0":
+        print("Zapiranje programa... Nasvidenje!")
+        break  # Prekine zanko in konča program
+        
     if izbira in ["1", "2", "3", "4"]:
         try:
-            x = float(input("Vnesi prvo število: "))
-            y = float(input("Vnesi drugo število: "))
+            x = float(input("Prvo število: "))
+            y = float(input("Drugo število: "))
             
             if izbira == "1":
-                print(f"Rezultat: {x} + {y} = {sestej(x, y)}")
+                print(f"Rezultat: {sestej(x, y)}")
             elif izbira == "2":
-                print(f"Rezultat: {x} - {y} = {odstej(x, y)}")
+                print(f"Rezultat: {odstej(x, y)}")
             elif izbira == "3":
-                print(f"Rezultat: {x} * {y} = {pomnozi(x, y)}")
+                print(f"Rezultat: {pomnozi(x, y)}")
             elif izbira == "4":
-                print(f"Rezultat: {x} / {y} = {deli(x, y)}")
+                print(f"Rezultat: {deli(x, y)}")
         except ValueError:
-            print("Napaka: Prosim vnesi številke!")
+            print("Napaka: Vnesi veljavno številko!")
     else:
-        print("Neveljavna izbira, poskusi znova.")
+        print("Neveljavna izbira!")
